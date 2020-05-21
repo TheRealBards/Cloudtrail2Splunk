@@ -33,6 +33,6 @@ if 'Records' in fil.keys():
             f.write('\n')
 
     print('Successfully written JSON events to {}'.format(fil_name))
- else:
+else:
     print('Not sure this is a JSON export from AWS Cloudtrail?')
     sys.exit(1)
