@@ -17,6 +17,9 @@ if os.path.exists(args.input):
         except Exception as e:
             print(e)
             sys.exit(1)
+else:
+    print('Are you sure the file exists?')
+    sys.exit(1)
 
 if 'Records' in fil.keys():
     if args.output:
@@ -29,5 +32,7 @@ if 'Records' in fil.keys():
             f.write(json.dumps(x))
             f.write('\n')
 
-
     print('Successfully written JSON events to {}'.format(fil_name))
+ else:
+    print('Not sure this is a JSON export from AWS Cloudtrail?')
+    sys.exit(1)
